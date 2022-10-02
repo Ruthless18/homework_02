@@ -3,21 +3,20 @@ from homework_02.exceptions import (
     NotEnoughFuel,
     )
 
-
-class Vehicle(NotEnoughFuel):
-    def __init__(self, weight: int, started: bool, fuel: int, fuel_consumption: int):
+class Vehicle:
+    def __init__(self, weight = 1000, fuel = 45, fuel_consumption = 11, started = False):
         self.weight = weight
-        self.started = started
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
+        self.started = started
+        self.vehicle = (weight, fuel, fuel_consumption, self.start())
+        print("vehicle", self.vehicle)
 
-
-    def start(self, started, fuel):
-         self.started = started
-         self.fuel = fuel
-         if started == False or fuel > 0:
-            return print(started == True)
-         else:
+    def start(self):
+        if self.fuel > 0:
+            self.started = True
+            return self.started
+        else:
             raise NotEnoughFuel
 
 
@@ -28,7 +27,6 @@ class Vehicle(NotEnoughFuel):
         else:
             raise NotEnoughFuel
 
-
-Vehicle = Vehicle(1000, True, 50, 12)
-print(Vehicle)
-print(Vehicle.__dict__)
+Vehicle()
+# Vehicle = Vehicle(40, 23, 14)
+# print(Vehicle.__dict__)
