@@ -9,20 +9,23 @@ class Vehicle:
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
         self.started = started
-        self.vehicle = (weight, fuel, fuel_consumption, self.start())
-        print("vehicle", self.vehicle)
+        self.vehicle = (weight, self.move(), fuel_consumption, self.start())
+        #print("vehicle", self.vehicle)
 
     def start(self):
         if self.fuel > 0:
             self.started = True
             return self.started
         else:
-            raise NotEnoughFuel
+            raise LowFuelError
 
 
     def move(self):
-        for self.fuel_consumption in range(self.weight):
-            self.fuel = self.fuel - self.fuel_consumption
+        max_distance = self.fuel // self.fuel_consumption
+        while max_distance > 0:
+            for i in range(max_distance):
+                self.fuel = self.fuel - self.fuel_consumption
+                #print(self.fuel)
             return self.fuel
         else:
             raise NotEnoughFuel
