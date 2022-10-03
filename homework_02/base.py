@@ -30,6 +30,6 @@ class Vehicle:
         else:
             raise NotEnoughFuel
 
-Vehicle()
+#Vehicle()
 # Vehicle = Vehicle(40, 23, 14)
 # print(Vehicle.__dict__)
