@@ -8,9 +8,9 @@ class Vehicle:
         self.weight = weight
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
+        self.start()
         self.started = started
-        self.vehicle = (weight, self.move(), fuel_consumption, self.start())
-        #print("vehicle", self.vehicle)
+
 
     def start(self):
         if self.fuel > 0:
@@ -25,11 +25,7 @@ class Vehicle:
         while max_distance > 0:
             for i in range(max_distance):
                 self.fuel = self.fuel - self.fuel_consumption
-                #print(self.fuel)
             return self.fuel
         else:
             raise NotEnoughFuel
 
-#Vehicle()
-# Vehicle = Vehicle(40, 23, 14)
-# print(Vehicle.__dict__)
