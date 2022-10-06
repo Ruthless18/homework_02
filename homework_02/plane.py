@@ -8,5 +8,5 @@ class Plane(Vehicle):
     cargo = None
     max_cargo = None
 
-    def load_cargo(self):
+    def load_cargo(self, max_cargo):
         pass
