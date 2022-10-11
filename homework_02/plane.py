@@ -6,7 +6,7 @@ from homework_02.exceptions import CargoOverload
 
 
 class Plane(Vehicle):
-    def __init__(self, weight, fuel, fuel_consumption, max_cargo= 12341342, cargo = 0):
+    def __init__(self, weight, fuel, fuel_consumption, max_cargo= 1213213, cargo = 0):
         super().__init__(weight, fuel, fuel_consumption)
         self.cargo = cargo
         self.remove_all_cargo()
